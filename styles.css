@@ -1,0 +1,57 @@
+.contact_form ul {
+  list-style-position: outside;
+  list-style-type:     none;
+  margin:              0px;
+  padding:             0px;
+  width:               750px;
+}
+.contact_form li{
+  border-bottom: 1px solid #eee;
+  padding:       12px;
+  position:      relative;
+}
+
+.contact_form h2 {
+  display: inline;
+  margin:  0;
+}
+
+.contact_form li:first-child,
+.contact_form li:last-child {
+  border-bottom: 1px solid #777;
+}
+
+.contact_form label {
+  display:    inline-block;
+  float:      left;
+  margin-top: 3px;
+  padding:    3px;
+  width:      150px;
+}
+.contact_form input {
+  height:  20px;
+  padding: 5px 8px;
+  width:   220px;
+}
+.contact_form textarea {
+  padding: 8px;
+  width:   300px;
+}
+
+.contact_form button {
+  margin-left: 156px;
+}
+
+/* when a field is considered invalid by the browser */
+.contact_form input:focus:invalid,
+.contact_form textarea:focus:invalid {
+  border-color: #b03535;
+  box-shadow:   0 0 5px #d45252;
+}
+
+/* when a field is considered valid by the browser */
+.contact_form input:required:valid,
+.contact_form textarea:required:valid {
+  border-color: #28921f;
+  box-shadow:   0 0 5px #5cd053;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+      <meta charset='utf-8'>
+      <link rel='stylesheet' media='screen' href='styles.css'>
+
+      <title>Property Enquiry</title>
+  </head>
+
+  <body>
+    <form id='contact_form' class='contact_form' method='post'
+    	action='https://api.propertytechnology.co.uk/consumer_enquiries'>
+
+      <!-- Per Agency/Office hidden fields -->
+      <input type='hidden'
+        id='agency_username' name='agency_username' value='AGENCY_USERNAME'>
+
+      <input type='hidden'
+        id='office_username' name='office_username' value='OFFICE_USERNAME'>
+
+      <!-- Per Property hidden fields -->
+      <input type='hidden'
+        id='property_reference' name='property_reference' value='REFERENCE'>
+
+      <input type='hidden'
+        id='property_address' name='property_address' value="ADDRESS">
+
+      <!-- Value should be 'sale' or 'let' -->
+      <input type='hidden' id='kind' name='kind' value='KIND'>
+
+      <ul>
+        <li>
+          <h2>Contact Details</h2>
+        </li>
+
+        <!-- The following fields are user populated -->
+        <li>
+          <label for='first_name'>First Name</label>
+          <input required id='first_name' name="first_name" type='text'
+            placeholder="Bob">
+        </li>
+
+        <li>
+          <label for='last_name'>Last Name</label>
+          <input required id='last_name' name="last_name" type='text'
+            placeholder="Howard">
+        </li>
+
+        <li>
+          <label for='email'>Email</label>
+          <input required id='email' name="email" type='email'
+            placeholder="bob.howard@example.com">
+        </li>
+
+        <li>
+          <label for='phone'>Phone Number</label>
+          <input required id='phone' name="phone" type='tel'
+            placeholder="07712345678">
+        </li>
+
+        <li>
+          <label for='message'>Message</label>
+          <input id='message' name="message" type='text'>
+        </li>
+
+      	<li>
+      		<button class="submit" type="submit">Submit Form</button>
+      	</li>
+      </ul>
+    </form>
+
+    <script type='text/javascript'>
+      $("#contact_form").submit(function(event) {
+        event.preventDefault();
+
+        var $form = $(this);
+        var url   = $form.attr('action');
+
+        var request = $.post(url, {
+  	      agency_username:    $('#agency_username').val(),
+  	      office_username:    $('#office_username').val(),
+  	      property_reference: $('#property_reference').val(),
+  	      property_address:   $('#property_address').val(),
+  	      kind:               $('#kind').val(),
+
+  	      first_name: $('#first_name').val(),
+  	      last_name:  $('#last_name').val(),
+  	      email:      $('#email').val(),
+  	      phone:      $('#phone').val(),
+  	      message:    $('#message').val(),
+  	    });
+
+        /* Alerts the results */
+        request.done(function(data) {
+          alert('Your details were submitted successfully.');
+          console.log('Data: ' + data)
+        });
+
+        request.fail(function( jqXHR, textStatus, errorThrown ) {
+          alert(
+            'The form failed to submit, with an error code: ' +
+            jqXHR.status + '. Please try again later.'
+          );
+
+          console.log('Text Status: ' + textStatus);
+          console.log('Error Code: ' + errorThrown);
+        });
+      });
+    </script>
+  </body>
+</html>
