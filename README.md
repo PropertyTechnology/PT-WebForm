@@ -1,59 +1,144 @@
 # LeadPro WebForm
-The Property Technology Consumer Enquiries API allows information to be submitted to Property Technology. This may be done using the sample web form provided, or via an alternate implementation that supplies a valid POST request to the Property Technology system.
+LeadPro is a tool for estate agents that instantly replies to portal enquiries, acknowledging their receipt and providing the enquirer with a short questionnaire to assess their suitability.
 
-A live demonstration example of the web form is available at the following URL:
-http://leadpro-webform.propertytechnology.co.uk/PT-WebForm/demo
+You can use the Web Form below to have LeadPro qualify enquiries sent through your homepage also.
 
+A live demonstration is available here:
+`http://leadpro-webform.propertytechnology.co.uk/demo`
+
+## Setup and Customisation
 The source code for the web form is available here:
-https://github.com/PropertyTechnology/PT-WebForm
+`https://github.com/PropertyTechnology/PT-WebForm`
 
-Data Fields
-POST data is taken from a number of agency-set (hidden) and user-supplied (visible) fields.
+### Page Attributes
+The following hidden fields must be set by the page on each submission of the form. Every field is mandatory.
 
-There are hidden static fields which contain details on the Agency and Office:
-- Agency Username (agency_username)
-- Office Username (office_username)
+`agency_username`
+```
+The unique identifier for your agency, supplied to you by Property Technology.
+```
 
-There dynamic hidden fields which must be populated per property:
-- Property Address (address)
-- Property ID (property_reference)
-- Whether the property is a ‘let’ or a ‘sale’ (kind)
+`office_username`
+```
+The unique identifier for your office, supplied to you by Property Technology.
+```
 
-There are visible fields which are populated using the form:
-- First Name (first_name)
-- Last Name (last_name)
-- Email Address (email)
-- Phone Number (phone)
-- Message (message)
-Data Content
-With the exception of the Message field (message), all of the above fields are mandatory.
+`property_address`
+```
+The full street address (including postcode) for the property being enquired about.
+```
 
-The hidden static fields must be populated with with content that will validate against the Property Technology system - i.e. valid Agency/Office usernames, and property Address/Reference details. The ‘kind’ attribute must be populated by ‘let’ or ‘sale’.
+`property_reference`
+```
+The unique identifier for the property in your property management software.
+```
 
-Basic validation is carried out pre-submission on the user supplied fields.
-Submission Response
-The response to a submission will conform to the JSON api with sparse fieldsets.
-On Success:
-An example successful submission could have the following response:
-{"data":[{
-"type":"consumer_enquiries","
-Id":"90a7d1a8fc",
-"Attributes":{
-"property_address":"1 Mayfair, N1 1AA",
-"property_reference":"property ABC",
-"Kind":"let",
-"name":"John Smith",
-"email":"j.smith@example.com",
-"Phone":"+442078927246",
-"message":null}}]}
+`kind`
+```
+The type of property listing - valid values are 'let' or 'sale'.
+```
 
-An unsuccessful submission (example: invalid agency username) receives an error response::
-{"errors":[{
-"Status":404,
-"Source":{
-"Parameter":"agency_username"},
-"title":"Agency Not Found",
-"detail":"Agency not found with agency_username: 'invalid-agency'"}]}
+### Consumer Attributes
+The following visible fields must be set by the consumer on each submission of the form. All fields except the `message` are mandatory.
 
-The sample web form indicates will indicate the success/failure of the submission to the user:
+`first_name`
+```
+The first name of the consumer making the enquiry.
+```
 
+`last_name`
+```
+The last name of the consumer making the enquiry.
+```
+
+`email`
+```
+The contact email address of the consumer making the enquiry.
+```
+
+`phone`
+```
+The contact phone number of the consumer making the enquiry.
+```
+
+`message`
+```
+Any other message the consumer making the enquiry wishes to send to the agency.
+```
+
+## Building Your Own Form
+If you wish to write your own form send data as a `POST` request to:
+
+`https://api.propertytechnology.co.uk/consumer_enquiries`
+
+You can test your implementation against the staging server by sending requests to: 
+
+`https://api-staging.propertytechnology.co.uk/consumer_enquiries`
+
+Using the following agency and office identifiers:
+
+```
+agency_username: propertytechnology
+office_username: london
+```
+
+### Responses
+The response to a submission will conform with the JSON API specification.
+
+#### On Success
+Success responses will follow this format:
+`http://jsonapi.org/examples/#sparse-fieldsets`
+
+```json
+{
+    "data": [
+        {
+            "type": "consumer_enquiries",
+            "id": "a93882e3b5",
+            "attributes": {
+                "property_address": "40 Islington High St",
+                "property_reference": "123456",
+                "kind": "let",
+                "name": "John Smith",
+                "email": "j.smith@example.com",
+                "phone": "+442078927246",
+                "message": "Hello, when could i view?"
+            }
+        }
+    ]
+}
+```
+
+#### On Failure
+Failure responses will follow this format:
+`http://jsonapi.org/examples/#error-objects`
+
+```json
+{
+    "errors": [
+        {
+            "status": 404,
+            "source": {
+                "parameter": "agency_username"
+            },
+            "title": "Agency Not Found",
+            "detail": "Agency not found with agency_username: 'invalid-agency'"
+        }
+    ]
+}
+```
+
+```json
+{
+    "errors": [
+        {
+            "status": 422,
+            "source": {
+                "pointer": "/data/attributes/kind"
+            },
+            "title": "Invalid Attribute",
+            "detail": "Kind is not included in the list, can't be blank"
+        }
+    ]
+}
+```
