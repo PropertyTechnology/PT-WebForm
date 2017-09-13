@@ -3,13 +3,13 @@ LeadPro is a tool for estate agents that instantly replies to portal enquiries, 
 
 Read more about LeadPro at <http://propertytechnology.co.uk>
 
-You can use the Web Form below to have LeadPro qualify enquiries sent through your homepage also.
+You can use the web form below to have LeadPro also qualify enquiries sent through your homepage.
 
 A live demonstration is available here:
 <http://leadpro-webform.propertytechnology.co.uk/demo>
 
 ## Setup and Customisation
-The source code for the web form is available here:
+The source code for an example web form is available here:
 <https://github.com/PropertyTechnology/PT-WebForm>
 
 ### Page Attributes
@@ -73,7 +73,7 @@ If you wish to write your own form send data as a `POST` request to:
 
 `https://api.propertytechnology.co.uk/consumer_enquiries`
 
-You can test your implementation against a staging server by sending requests to: 
+You can test your implementation against a staging server by sending requests to:
 
 `https://api-staging.propertytechnology.co.uk/consumer_enquiries`
 
