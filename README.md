@@ -4,11 +4,11 @@ LeadPro is a tool for estate agents that instantly replies to portal enquiries, 
 You can use the Web Form below to have LeadPro qualify enquiries sent through your homepage also.
 
 A live demonstration is available here:
-`http://leadpro-webform.propertytechnology.co.uk/demo`
+<http://leadpro-webform.propertytechnology.co.uk/demo>
 
 ## Setup and Customisation
 The source code for the web form is available here:
-`https://github.com/PropertyTechnology/PT-WebForm`
+<https://github.com/PropertyTechnology/PT-WebForm>
 
 ### Page Attributes
 The following hidden fields must be set by the page on each submission of the form. Every field is mandatory.
@@ -39,7 +39,7 @@ The type of property listing - valid values are 'let' or 'sale'.
 ```
 
 ### Consumer Attributes
-The following visible fields must be set by the consumer on each submission of the form. All fields except the `message` are mandatory.
+The following visible fields must be set by the consumer on each submission of the form. All fields except `message` are mandatory.
 
 `first_name`
 ```
@@ -87,7 +87,7 @@ The response to a submission will conform with the JSON API specification.
 
 #### On Success
 Success responses will follow this format:
-`http://jsonapi.org/examples/#sparse-fieldsets`
+<http://jsonapi.org/examples/#sparse-fieldsets>
 
 ```json
 {
@@ -111,7 +111,7 @@ Success responses will follow this format:
 
 #### On Failure
 Failure responses will follow this format:
-`http://jsonapi.org/examples/#error-objects`
+<http://jsonapi.org/examples/#error-objects>
 
 ```json
 {
