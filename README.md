@@ -13,7 +13,7 @@ The source code for an example web form is available here:
 <https://github.com/PropertyTechnology/PT-WebForm>
 
 ### Page Attributes
-The following hidden fields must be set by the page on each submission of the form. Every field is mandatory.
+The following hidden fields must be set by the page on each submission of the form. All fields except `webpage_link` are mandatory.
 
 `agency_username`
 ```
@@ -33,6 +33,11 @@ The full street address (including postcode) for the property being enquired abo
 `property_reference`
 ```
 The unique identifier for the property in your property management software.
+```
+
+`webpage_link`
+```
+The url for the property on your website.
 ```
 
 `kind`
@@ -100,6 +105,7 @@ Success responses will follow this format:
             "attributes": {
                 "property_address": "40 Islington High St",
                 "property_reference": "123456",
+                "webpage_link": "http://yourpage.com/property"
                 "kind": "let",
                 "name": "John Smith",
                 "email": "j.smith@example.com",
