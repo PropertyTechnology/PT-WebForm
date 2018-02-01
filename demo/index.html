@@ -28,11 +28,15 @@
         value='40 Islington High St'>
 
       <input type='hidden'
-        id='webpage_link' name='webpage_link'
+        id='listing_url' name='listing_url'
         value='http://properties.com/40-islington-high-st'>
 
       <!-- Value should be 'sale' or 'let' -->
       <input type='hidden' id='kind' name='kind' value='let'>
+
+      <input type='hidden'
+        id='additional_info' name='additional_info'
+        value='User wants to view'>
 
       <ul>
         <li>
@@ -62,6 +66,11 @@
           <label for='phone'>Phone Number</label>
           <input required id='phone' name="phone" type='tel'
             placeholder="07712345678">
+        </li>
+
+        <li>
+          <label for='address'>Address</label>
+          <input id='address' name="address" type='text'>
         </li>
 
         <li>

@@ -13,7 +13,9 @@ The source code for an example web form is available here:
 <https://github.com/PropertyTechnology/PT-WebForm>
 
 ### Page Attributes
-The following hidden fields must be set by the page on each submission of the form. All fields except `webpage_link` are mandatory.
+The following hidden fields must be set by the page on each submission of the form.
+All fields except `listing_url` and `additional_info` are mandatory.
+`listing_url` is highly recommended as users can forget which property they enquired about.
 
 `agency_username`
 ```
@@ -35,7 +37,7 @@ The full street address (including postcode) for the property being enquired abo
 The unique identifier for the property in your property management software.
 ```
 
-`webpage_link`
+`listing_url`
 ```
 The url for the property on your website.
 ```
@@ -45,8 +47,14 @@ The url for the property on your website.
 The type of property listing - valid values are 'let' or 'sale'.
 ```
 
+`additional_info`
+```
+Any other information you would like tagged to the enquiry, it will not be shown to the consumer.
+```
+
 ### Consumer Attributes
-The following visible fields must be set by the consumer on each submission of the form. All fields except `message` are mandatory.
+The following visible fields can be set by the consumer on each submission of the form.
+All fields except `message` and `address` are mandatory (can be removed if you wish).
 
 `first_name`
 ```
@@ -66,6 +74,11 @@ The contact email address of the consumer making the enquiry.
 `phone`
 ```
 The contact telephone number of the consumer making the enquiry.
+```
+
+`address`
+```
+The contact address of the consumer making the enquiry.
 ```
 
 `message`

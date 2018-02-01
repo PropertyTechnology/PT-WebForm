@@ -27,10 +27,13 @@
         id='property_address' name='property_address' value="ADDRESS">
 
       <input type='hidden'
-        id='webpage_link' name='webpage_link' value="WEBPAGE_LINK">
+        id='listing_url' name='listing_url' value="LISTING_URL">
 
       <!-- Value should be 'sale' or 'let' -->
       <input type='hidden' id='kind' name='kind' value='KIND'>
+
+      <input type='hidden'
+        id='additional_info' name='additional_info' value="ADDITIONAL_INFO">
 
       <ul>
         <li>
@@ -60,6 +63,11 @@
           <label for='phone'>Phone Number</label>
           <input required id='phone' name="phone" type='tel'
             placeholder="07712345678">
+        </li>
+
+        <li>
+          <label for='address'>Address</label>
+          <input id='address' name="address" type='text'>
         </li>
 
         <li>
