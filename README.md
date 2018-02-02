@@ -118,11 +118,13 @@ Success responses will follow this format:
             "attributes": {
                 "property_address": "40 Islington High St",
                 "property_reference": "123456",
-                "webpage_link": "http://yourpage.com/property"
+                "listing_url": "http://yourpage.com/property",
+                "additonal_info": "Section A property",
                 "kind": "let",
                 "name": "John Smith",
                 "email": "j.smith@example.com",
                 "phone": "+442078927246",
+                "address": "1 Malloy St",
                 "message": "Hello, when could i view?"
             }
         }
