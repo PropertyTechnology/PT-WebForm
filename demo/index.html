@@ -12,32 +12,6 @@
     <form id='contact_form' class='contact_form' method='post'
       action='https://api-staging.propertytechnology.co.uk/consumer_enquiries'>
 
-      <!-- Per Agency/Office hidden fields -->
-      <input type='hidden'
-        id='agency_username' name='agency_username' value='propertytechnology'>
-
-      <input type='hidden'
-        id='office_username' name='office_username' value='london'>
-
-      <!-- Per Property hidden fields -->
-      <input type='hidden'
-        id='property_reference' name='property_reference' value='123456'>
-
-      <input type='hidden'
-        id='property_address' name='property_address'
-        value='40 Islington High St'>
-
-      <input type='hidden'
-        id='listing_url' name='listing_url'
-        value='http://properties.com/40-islington-high-st'>
-
-      <!-- Value should be 'sale' or 'let' -->
-      <input type='hidden' id='kind' name='kind' value='let'>
-
-      <input type='hidden'
-        id='additional_info' name='additional_info'
-        value='User wants to view'>
-
       <ul>
         <li>
           <h2>Contact Details</h2>
@@ -80,6 +54,57 @@
 
         <li>
           <button class="submit" type="submit">Submit Form</button>
+        </li>
+
+        <li>
+          <h2>Hidden fields</h2>
+          <h4>
+            Next fields are usually hidden,
+            but can be changed here for test purposes
+          </h4>
+        </li>
+
+        <!-- Per Agency/Office hidden fields -->
+        <li>
+          <label for='agency_username'>Agency Username</label>
+          <input id='agency_username' name='agency_username'
+            value='propertytechnology'>
+        </li>
+
+        <li>
+          <label for='office_username'>Office Username</label>
+          <input id='office_username' name='office_username' value='london'>
+        </li>
+
+        <!-- Per Property hidden fields -->
+        <li>
+          <label for='property_reference'>Property Reference</label>
+          <input id='property_reference' name='property_reference'
+            value='123456'>
+        </li>
+
+        <li>
+          <label for='property_address'>Property Address</label>
+          <input id='property_address' name='property_address'
+            value='40 Islington High St'>
+        </li>
+
+        <li>
+          <label for='listing_url'>Listing Url</label>
+          <input id='listing_url' name='listing_url'
+            value='http://properties.com/40-islington-high-st'>
+        </li>
+
+          <!-- Value should be 'sale' or 'let' -->
+        <li>
+          <label for='kindl'>Kind</label>
+          <input id='kind' name='kind' value='let'>
+        </li>
+
+        <li>
+          <label for='additional_infol'>Additional Info</label>
+          <input id='additional_info' name='additional_info'
+            value='User wants to view'>
         </li>
       </ul>
     </form>
