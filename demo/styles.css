@@ -16,7 +16,7 @@
   margin:  0;
 }
 
-.contact_form li:first-child,
+.contact_form li.title,
 .contact_form li:last-child {
   border-bottom: 1px solid #777;
 }

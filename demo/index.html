@@ -13,7 +13,7 @@
       action='https://api-staging.propertytechnology.co.uk/consumer_enquiries'>
 
       <ul>
-        <li>
+        <li class="title">
           <h2>Contact Details</h2>
         </li>
 
@@ -56,10 +56,10 @@
           <button class="submit" type="submit">Submit Form</button>
         </li>
 
-        <li>
+        <li class="title">
           <h2>Hidden fields</h2>
           <h4>
-            Next fields are usually hidden,
+            Usually next fields are hidden,
             but can be changed here for test purposes
           </h4>
         </li>
@@ -97,14 +97,18 @@
 
           <!-- Value should be 'sale' or 'let' -->
         <li>
-          <label for='kindl'>Kind</label>
-          <input id='kind' name='kind' value='let'>
+          <label for='kind'>Kind</label>
+          <select id='kind' name='kind'>
+            <option value='let'>Let</option>
+            <option value='sale'>Sale</option>
+          </select>
         </li>
 
         <li>
           <label for='additional_infol'>Additional Info</label>
-          <input id='additional_info' name='additional_info'
-            value='User wants to view'>
+          <textarea id='additional_info' name='additional_info'>
+            User wants to view
+          </textarea>
         </li>
       </ul>
     </form>
