@@ -121,9 +121,13 @@
         </li>
 
         <li>
-          <label for='submitted_at'>Submitted</label>
-          <input id='submitted_at' name='submitted_at'
-            placeholder='YYYY-MM-DD HH:MM'>
+          <label for='day'>Viewing Day</label>
+          <input id='day' name='day' placeholder='Monday'>
+        </li>
+
+        <li>
+          <label for='hours'>Viewing Hours</label>
+          <input id='hours' name='hours' placeholder='Evening'>
         </li>
       </ul>
     </form>
@@ -140,6 +144,8 @@
           office_username:    $('#office_username').val(),
           property_reference: $('#property_reference').val(),
           property_address:   $('#property_address').val(),
+          property_price:     $('#property_price').val(),
+          property_bedrooms:  $('#property_bedrooms').val(),
           kind:               $('#kind').val(),
 
           first_name: $('#first_name').val(),
@@ -147,6 +153,10 @@
           email:      $('#email').val(),
           phone:      $('#phone').val(),
           message:    $('#message').val(),
+
+          additional_info:  $('#additional_info').val(),
+          day:              $('#day').val(),
+          hours:            $('#hours').val()
         });
 
         /* Alerts the results */
