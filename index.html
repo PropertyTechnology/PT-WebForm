@@ -75,6 +75,16 @@
           <input id='message' name="message" type='text'>
         </li>
 
+        <li>
+          <label for='day'>Viewing Day</label>
+          <input id='day' name='day' value='Monday'>
+        </li>
+
+        <li>
+          <label for='hours'>Viewing Hours</label>
+          <input id='hours' name='hours' value='Evening'>
+        </li>
+
       	<li>
       		<button class="submit" type="submit">Submit Form</button>
       	</li>
@@ -100,6 +110,9 @@
   	      email:      $('#email').val(),
   	      phone:      $('#phone').val(),
   	      message:    $('#message').val(),
+
+  	      day:        $('day').val(),
+  	      hours:      $('hours').val()
   	    });
 
         /* Alerts the results */

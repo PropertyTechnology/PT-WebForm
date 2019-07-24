@@ -54,7 +54,7 @@ Any other information you would like tagged to the enquiry, it will not be shown
 
 ### Consumer Attributes
 The following visible fields can be set by the consumer on each submission of the form.
-All fields except `message` and `address` are mandatory (can be removed if you wish).
+All fields except `message`, `address`, `day` and  'hours' are mandatory (can be removed if you wish).
 
 `first_name`
 ```
@@ -84,6 +84,16 @@ The contact address of the consumer making the enquiry.
 `message`
 ```
 Any other message the consumer making the enquiry wishes to send to the agency.
+```
+
+`day`
+```
+The day when the applicant wants to view the property.
+```
+
+`hours`
+```
+Hours when the applicant wants to view the property.
 ```
 
 ## Building Your Own Form
