@@ -47,6 +47,12 @@ The url for the property on your website.
 The type of property listing - valid values are 'let' or 'sale'.
 ```
 
+`enforced_leads`
+```
+A comma-separated list of lead types which should be created for this
+enquiry.
+```
+
 `additional_info`
 ```
 Any other information you would like tagged to the enquiry, it will not be shown to the consumer.
