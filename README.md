@@ -14,53 +14,53 @@ The source code for an example web form is available here:
 
 ### Page Attributes
 The following hidden fields must be set by the page on each submission of the form.
-All fields except `listing_url` and `additional_info` are mandatory.
 `listing_url` is highly recommended as users can forget which property they enquired about.
 
-`agency_username`
+`agency_username`, mandatory
 ```
 The unique identifier for your agency, supplied to you by Property Technology.
 ```
 
-`office_username`
+`office_username`, mandatory
 ```
 The unique identifier for your office, supplied to you by Property Technology.
 ```
 
-`property_address`
+`property_address`, optional
 ```
 The full street address (including postcode) for the property being enquired about.
+If the address isn't provided, then a placeholder "No address" is used
 ```
 
-`property_reference`
+`property_reference`, optional
 ```
 The unique identifier for the property in your property management software.
 ```
 
-`listing_url`
+`listing_url`, optional
 ```
 The url for the property on your website.
 ```
 
-`kind`
+`kind`, mandatory
 ```
 The type of property listing - valid values are 'let' or 'sale'.
 ```
 
-`enforced_leads`
+`enforced_leads`, optional
 ```
 A comma-separated list of lead types which should be created for this
 enquiry.
 ```
 
-`additional_info`
+`additional_info`, optional
 ```
 Any other information you would like tagged to the enquiry, it will not be shown to the consumer.
 ```
 
 ### Consumer Attributes
 The following visible fields can be set by the consumer on each submission of the form.
-All fields except `message`, `address`, `day` and  'hours' are mandatory (can be removed if you wish).
+Only the `email` field is mandatory, others are optional.
 
 `first_name`
 ```
