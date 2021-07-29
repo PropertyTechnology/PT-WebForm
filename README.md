@@ -47,7 +47,7 @@ The url for the property on your website.
 The type of property listing - valid values are 'let' or 'sale'.
 
 To send a sales viewing lead  - {type : 'sales'}
-To send a lettings viewing lead - {type : 'viewing'}
+To send a lettings viewing lead - {type : 'let'}
 ```
 
 `enforced_leads`, optional
