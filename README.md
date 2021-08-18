@@ -46,8 +46,8 @@ The url for the property on your website.
 ```
 The type of property listing - valid values are 'let' or 'sale'.
 
-To send a sales viewing lead  - {type : 'sale'}
-To send a lettings viewing lead - {type : 'let'}
+To send a sales viewing lead  - {kind : 'sale'}
+To send a lettings viewing lead - {kind : 'let'}
 ```
 
 `enforced_leads`, optional
@@ -56,8 +56,8 @@ A comma-separated list of lead types which should be created for this
 enquiry.
 
 For example 
-To send a 'vendor valuation lead' - {type : 'sale' , enforced_leads : ['vendor' , 'market_appraisal']}
-To send a 'landlord valuation lead' -  {type : 'let' , enforced_leads : ['landlord' , 'market_appraisal']} 
+To send a 'vendor valuation lead' - {kind: 'sale' , enforced_leads : ['vendor' , 'market_appraisal']}
+To send a 'landlord valuation lead' -  {kind : 'let' , enforced_leads : ['landlord' , 'market_appraisal']} 
 ```
 
 `additional_info`, optional
