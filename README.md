@@ -56,8 +56,8 @@ A comma-separated list of lead types which should be created for this
 enquiry.
 
 For example 
-To send a 'vendor valuation lead' - {kind: 'sale' , enforced_leads : ['vendor' , 'market_appraisal']}
-To send a 'landlord valuation lead' -  {kind : 'let' , enforced_leads : ['landlord' , 'market_appraisal']} 
+To send a 'vendor valuation lead' - {kind: 'sale' , enforced_leads : 'vendor,market_appraisal'}
+To send a 'landlord valuation lead' -  {kind : 'let' , enforced_leads : 'landlord,market_appraisal'} 
 ```
 
 `additional_info`, optional
